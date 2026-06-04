@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { seasons, activities } from "@/data/lapland-data";
+import { editorialHero, heroPhotography, seasonMoods } from "@/data/editorial-visuals";
 
 export const metadata: Metadata = {
   title: "When to Go",
@@ -11,99 +12,81 @@ export default function WhenToGoPage() {
   return (
     <>
       <section
-        className="relative px-6 py-20"
-        style={{
-          background:
-            "linear-gradient(135deg, #0A0F1E 0%, #0D1B2A 60%, #0F2235 100%)",
-        }}
+        className="relative flex min-h-[70vh] items-end overflow-hidden px-6 py-24 sm:py-32"
+        style={editorialHero(heroPhotography.arcticNight)}
       >
-        <div className="max-w-4xl mx-auto">
-          <p className="eyebrow mb-4">When to go</p>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(77,255,160,0.14),transparent_32%)]" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <p className="eyebrow mb-5">When to go</p>
           <h1
-            className="font-display italic"
-            style={{
-              fontSize: "clamp(40px, 6vw, 64px)",
-              color: "var(--frost)",
-              fontWeight: 500,
-            }}
+            className="font-display max-w-5xl italic leading-[0.9] tracking-[-0.045em]"
+            style={{ fontSize: "clamp(64px, 10vw, 132px)", color: "var(--frost)", fontWeight: 500 }}
           >
             Every season has its magic
           </h1>
-          <p className="mt-4 text-lg max-w-xl" style={{ color: "var(--muted)" }}>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[rgba(240,237,232,0.72)]">
             Finnish Lapland rewards visitors year-round. Here&apos;s how to pick the right window for your trip.
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {seasons.map((season) => (
-            <div key={season.title} className="card-glass p-8">
-              <p className="eyebrow mb-2">{season.title}</p>
-              <h2
-                className="font-display text-3xl font-semibold mb-4"
-                style={{ color: "var(--frost)" }}
+      <section className="px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.25rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-4">
+            {seasons.map((season, index) => (
+              <div
+                key={season.title}
+                className="relative min-h-[460px] border-b border-[rgba(240,237,232,0.1)] bg-cover bg-center p-7 lg:border-b-0 lg:border-r lg:border-[rgba(240,237,232,0.1)] last:lg:border-r-0"
+                style={{ backgroundImage: seasonMoods[index] }}
               >
-                {season.label}
-              </h2>
-              <p className="mb-6" style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-                {season.desc}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {season.activities.map((a) => (
-                  <span key={a} className="badge-chip">{a}</span>
-                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.84)] via-transparent to-[rgba(3,6,14,0.18)]" />
+                <div className="relative z-10 flex h-full flex-col justify-between">
+                  <p className="eyebrow">{season.title}</p>
+                  <div>
+                    <h2 className="font-display mb-4 text-4xl font-medium italic leading-none text-[var(--frost)]">
+                      {season.label}
+                    </h2>
+                    <p className="mb-6 text-sm leading-7 text-[rgba(240,237,232,0.7)]">
+                      {season.desc}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {season.activities.map((a) => (
+                        <span key={a} className="badge-chip">{a}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="px-6 pb-20" style={{ borderTop: "1px solid rgba(168,216,234,0.08)" }}>
-        <div className="max-w-6xl mx-auto pt-12">
-          <p className="eyebrow mb-3">Activity season guide</p>
-          <h2
-            className="font-display mb-8"
-            style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "var(--frost)", fontWeight: 600 }}
-          >
+      <section className="px-6 pb-24 sm:pb-32 section-divider">
+        <div className="mx-auto max-w-7xl pt-20">
+          <p className="eyebrow mb-4">Activity season guide</p>
+          <h2 className="font-display mb-10 text-5xl font-medium italic leading-none text-[var(--frost)] sm:text-7xl">
             Activity × best months
           </h2>
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{ border: "1px solid rgba(168,216,234,0.12)" }}
-          >
+          <div className="overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.12)] bg-[rgba(7,16,31,0.68)] shadow-2xl backdrop-blur-xl">
             <table className="w-full text-sm">
               <thead>
-                <tr style={{ background: "rgba(77,255,160,0.06)", borderBottom: "1px solid rgba(77,255,160,0.12)" }}>
-                  <th className="text-left p-4 font-semibold" style={{ color: "var(--aurora)" }}>
-                    Activity
-                  </th>
-                  <th className="text-left p-4 font-semibold" style={{ color: "var(--aurora)" }}>
-                    Best season
-                  </th>
-                  <th className="text-left p-4 font-semibold hidden sm:table-cell" style={{ color: "var(--aurora)" }}>
-                    Duration
-                  </th>
+                <tr className="border-b border-[rgba(77,255,160,0.12)] bg-[rgba(77,255,160,0.06)]">
+                  <th className="p-5 text-left font-semibold uppercase tracking-[0.16em] text-[var(--aurora)]">Activity</th>
+                  <th className="p-5 text-left font-semibold uppercase tracking-[0.16em] text-[var(--aurora)]">Best season</th>
+                  <th className="hidden p-5 text-left font-semibold uppercase tracking-[0.16em] text-[var(--aurora)] sm:table-cell">Duration</th>
                 </tr>
               </thead>
               <tbody>
                 {activities.map((act, i) => (
                   <tr
                     key={act.slug}
-                    style={{
-                      background: i % 2 === 0 ? "rgba(13,27,42,0.6)" : "rgba(13,27,42,0.3)",
-                      borderBottom: "1px solid rgba(168,216,234,0.06)",
-                    }}
+                    className="border-b border-[rgba(168,216,234,0.06)]"
+                    style={{ background: i % 2 === 0 ? "rgba(13,27,42,0.58)" : "rgba(13,27,42,0.28)" }}
                   >
-                    <td className="p-4" style={{ color: "var(--frost)" }}>
-                      {act.name}
-                    </td>
-                    <td className="p-4" style={{ color: "var(--muted)" }}>
-                      {act.bestSeason}
-                    </td>
-                    <td className="p-4 hidden sm:table-cell" style={{ color: "var(--muted)" }}>
-                      {act.duration}
-                    </td>
+                    <td className="p-5 text-[var(--frost)]">{act.name}</td>
+                    <td className="p-5 text-[rgba(240,237,232,0.58)]">{act.bestSeason}</td>
+                    <td className="hidden p-5 text-[rgba(240,237,232,0.58)] sm:table-cell">{act.duration}</td>
                   </tr>
                 ))}
               </tbody>

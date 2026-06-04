@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import { activities, destinations } from "@/data/lapland-data";
+import { activityPhotography, destinationPhotography } from "@/data/editorial-visuals";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,47 +32,43 @@ export default async function ActivityPage({ params }: Props) {
   return (
     <>
       <section
-        className="relative px-6 py-20"
+        className="relative flex min-h-[78vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={{
-          background:
-            "linear-gradient(135deg, #0A0F1E 0%, #0D1B2A 60%, #0F2235 100%)",
+          backgroundImage: `linear-gradient(90deg, rgba(3,6,14,0.95) 0%, rgba(5,10,22,0.8) 48%, rgba(5,10,22,0.28) 100%), linear-gradient(180deg, rgba(3,6,14,0.12) 0%, rgba(3,6,14,0.8) 78%, var(--midnight) 100%), url('${activityPhotography[slug]}')`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
-        <div className="max-w-5xl mx-auto">
-          <nav className="text-xs mb-6" style={{ color: "var(--muted)" }}>
-            <Link href="/" className="hover:opacity-80">Home</Link>
-            {" › "}
-            <Link href="/activities" className="hover:opacity-80">Activities</Link>
-            {" › "}
-            <span style={{ color: "var(--ice)" }}>{act.name}</span>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(77,255,160,0.16),transparent_32%)]" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <nav className="mb-8 text-xs uppercase tracking-[0.18em] text-[rgba(240,237,232,0.48)]">
+            <Link href="/" className="hover:text-[var(--ice)]">Home</Link>
+            {" / "}
+            <Link href="/activities" className="hover:text-[var(--ice)]">Activities</Link>
+            {" / "}
+            <span className="text-[var(--ice)]">{act.name}</span>
           </nav>
-          <div className="flex items-center gap-4 mb-4">
-            <Icon size={32} style={{ color: act.featured ? "var(--aurora)" : "var(--ice)" }} />
-            {act.badge && (
-              <span className={`badge-chip ${act.featured ? "badge-aurora" : ""}`}>
-                {act.badge}
-              </span>
-            )}
+          <div className="mb-6 flex items-center gap-4">
+            <span className={`rounded-full border bg-[rgba(3,6,14,0.42)] p-4 backdrop-blur-md ${act.featured ? "border-[rgba(77,255,160,0.34)] text-[var(--aurora)]" : "border-[rgba(168,216,234,0.22)] text-[var(--ice)]"}`}>
+              <Icon size={28} />
+            </span>
+            {act.badge && <span className={`badge-chip ${act.featured ? "badge-aurora" : ""}`}>{act.badge}</span>}
           </div>
           <h1
-            className="font-display italic"
-            style={{
-              fontSize: "clamp(40px, 6vw, 64px)",
-              color: "var(--frost)",
-              fontWeight: 500,
-            }}
+            className="font-display max-w-5xl italic leading-[0.86] tracking-[-0.05em]"
+            style={{ fontSize: "clamp(70px, 11vw, 152px)", color: "var(--frost)", fontWeight: 500 }}
           >
             {act.name}
           </h1>
-          <p className="mt-4 text-lg max-w-xl" style={{ color: "var(--muted)" }}>
+          <p className="mt-7 max-w-2xl text-xl leading-9 text-[rgba(240,237,232,0.76)]">
             {act.short}
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 prose-lapland">
+      <section className="px-6 py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="prose-lapland text-lg">
             <p>
               {act.name} is one of the defining experiences of a Finnish Lapland winter. {act.short}{" "}
               Most tours operate {act.bestSeason.toLowerCase()}, lasting {act.duration.toLowerCase()}.
@@ -80,73 +78,55 @@ export default async function ActivityPage({ params }: Props) {
               operators include equipment, safety briefings and warm gear where required.
             </p>
             <p>
-              To book {act.name.toLowerCase()}, choose a destination below — each one has local
-              operators we&apos;ve vetted for quality and reliability.
+              To book {act.name.toLowerCase()}, choose a destination below and compare local operators
+              with clear paid partner disclosures.
             </p>
           </div>
 
           <aside>
-            <div className="card-glass p-6 sticky top-24">
-              <h3 className="font-display text-lg font-semibold mb-4" style={{ color: "var(--frost)" }}>
-                At a glance
-              </h3>
-              <dl className="space-y-4">
-                <div>
-                  <dt className="eyebrow mb-1">Best season</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.bestSeason}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Duration</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.duration}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Difficulty</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.difficulty}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Price range</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.priceRange}</dd>
-                </div>
+            <div className="sticky top-24 rounded-[2rem] border border-[rgba(240,237,232,0.12)] bg-[rgba(7,16,31,0.72)] p-7 shadow-2xl backdrop-blur-xl">
+              <p className="eyebrow mb-5">Experience notes</p>
+              <dl className="space-y-5">
+                <div><dt className="eyebrow mb-2">Best season</dt><dd className="text-sm text-[var(--frost)]">{act.bestSeason}</dd></div>
+                <div><dt className="eyebrow mb-2">Duration</dt><dd className="text-sm text-[var(--frost)]">{act.duration}</dd></div>
+                <div><dt className="eyebrow mb-2">Difficulty</dt><dd className="text-sm text-[var(--frost)]">{act.difficulty}</dd></div>
+                <div><dt className="eyebrow mb-2">Price range</dt><dd className="text-sm text-[var(--frost)]">{act.priceRange}</dd></div>
               </dl>
             </div>
           </aside>
         </div>
       </section>
 
-      <section className="px-6 pb-16" style={{ borderTop: "1px solid rgba(168,216,234,0.08)" }}>
-        <div className="max-w-5xl mx-auto pt-12">
-          <p className="eyebrow mb-3">Where to do it</p>
-          <h2
-            className="font-display mb-8"
-            style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "var(--frost)", fontWeight: 600 }}
-          >
-            Choose your destination
+      <section className="px-6 py-20 sm:py-28 section-divider">
+        <div className="mx-auto max-w-7xl">
+          <p className="eyebrow mb-4">Where to book</p>
+          <h2 className="font-display mb-10 text-5xl font-medium italic leading-none text-[var(--frost)] sm:text-7xl">
+            Best destinations for {act.name}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {actDestinations.map((dest) => {
-              const DIcon = dest.icon;
-              return (
-                <Link
-                  key={dest.slug}
-                  href={`/destinations/${dest.slug}/${act.slug}`}
-                  className="card-glass p-6 block"
-                >
-                  <DIcon size={22} style={{ color: "var(--ice)" }} className="mb-3" />
-                  <h3
-                    className="font-display text-xl font-semibold mb-1"
-                    style={{ color: "var(--frost)" }}
-                  >
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {actDestinations.map((dest) => (
+              <Link
+                key={dest.slug}
+                href={`/destinations/${dest.slug}/${act.slug}`}
+                className="group relative flex min-h-[420px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url('${destinationPhotography[dest.slug]}')`, filter: "brightness(0.74) contrast(1.08)" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.96)] via-[rgba(3,6,14,0.38)] to-transparent" />
+                <div className="relative z-10 mt-auto p-7">
+                  <span className="badge-chip mb-5">{dest.badge}</span>
+                  <h3 className="font-display mb-3 text-4xl font-medium italic leading-none text-[var(--frost)]">
                     {dest.name}
                   </h3>
-                  <p className="text-sm mb-4" style={{ color: "var(--muted)" }}>
-                    {dest.tagline}
-                  </p>
-                  <span className="text-sm" style={{ color: "var(--ice)" }}>
-                    {act.name} in {dest.name} →
+                  <p className="mb-6 text-sm leading-7 text-[rgba(240,237,232,0.68)]">{dest.tagline}</p>
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ice)]">
+                    See operators <ArrowRight size={14} />
                   </span>
-                </Link>
-              );
-            })}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
