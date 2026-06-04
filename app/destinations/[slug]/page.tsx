@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { destinations, activities } from "@/data/lapland-data";
+import { activityPhotography, destinationPhotography } from "@/data/editorial-visuals";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -29,40 +30,38 @@ export default async function DestinationPage({ params }: Props) {
   return (
     <>
       <section
-        className="relative px-6 py-20"
+        className="relative flex min-h-[78vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={{
-          background:
-            "linear-gradient(135deg, #0A0F1E 0%, #0D1B2A 60%, #0F2235 100%)",
+          backgroundImage: `linear-gradient(90deg, rgba(3,6,14,0.95) 0%, rgba(5,10,22,0.78) 46%, rgba(5,10,22,0.28) 100%), linear-gradient(180deg, rgba(3,6,14,0.1) 0%, rgba(3,6,14,0.8) 78%, var(--midnight) 100%), url('${destinationPhotography[slug]}')`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
-        <div className="max-w-5xl mx-auto">
-          <nav className="text-xs mb-6" style={{ color: "var(--muted)" }}>
-            <Link href="/" className="hover:opacity-80">Home</Link>
-            {" › "}
-            <Link href="/destinations" className="hover:opacity-80">Destinations</Link>
-            {" › "}
-            <span style={{ color: "var(--ice)" }}>{dest.name}</span>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(77,255,160,0.14),transparent_32%)]" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <nav className="mb-8 text-xs uppercase tracking-[0.18em] text-[rgba(240,237,232,0.48)]">
+            <Link href="/" className="hover:text-[var(--ice)]">Home</Link>
+            {" / "}
+            <Link href="/destinations" className="hover:text-[var(--ice)]">Destinations</Link>
+            {" / "}
+            <span className="text-[var(--ice)]">{dest.name}</span>
           </nav>
-          <span className="badge-chip mb-4">{dest.badge}</span>
+          <span className="badge-chip mb-5 inline-block">{dest.badge}</span>
           <h1
-            className="font-display italic mt-2"
-            style={{
-              fontSize: "clamp(40px, 6vw, 64px)",
-              color: "var(--frost)",
-              fontWeight: 500,
-            }}
+            className="font-display max-w-4xl italic leading-[0.86] tracking-[-0.05em]"
+            style={{ fontSize: "clamp(76px, 12vw, 168px)", color: "var(--frost)", fontWeight: 500 }}
           >
             {dest.name}
           </h1>
-          <p className="mt-3 text-xl" style={{ color: "var(--muted)" }}>
+          <p className="mt-7 max-w-2xl text-2xl leading-9 text-[rgba(240,237,232,0.76)]">
             {dest.tagline}
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 prose-lapland">
+      <section className="px-6 py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="prose-lapland text-lg">
             <p>
               {dest.name} is one of Finnish Lapland&apos;s most compelling destinations. Known for{" "}
               {dest.knownFor.toLowerCase()}, it draws visitors year-round but is at its most magical
@@ -74,34 +73,26 @@ export default async function DestinationPage({ params }: Props) {
               snow-covered forests, or exhilarating Arctic activities, {dest.name} delivers.
             </p>
             <p>
-              Access is straightforward via {dest.airport}. Most visitors combine{" "}
-              {dest.name} with at least two or three activities during a stay of five to seven nights.
+              Access is straightforward via {dest.airport}. Most visitors combine {dest.name} with
+              at least two or three activities during a stay of five to seven nights.
             </p>
           </div>
 
           <aside>
-            <div
-              className="card-glass p-6 sticky top-24"
-              style={{ borderRadius: "16px" }}
-            >
-              <h3
-                className="font-display text-lg font-semibold mb-4"
-                style={{ color: "var(--frost)" }}
-              >
-                Quick facts
-              </h3>
-              <dl className="space-y-3">
+            <div className="sticky top-24 rounded-[2rem] border border-[rgba(240,237,232,0.12)] bg-[rgba(7,16,31,0.72)] p-7 shadow-2xl backdrop-blur-xl">
+              <p className="eyebrow mb-5">Quick facts</p>
+              <dl className="space-y-5">
                 <div>
-                  <dt className="eyebrow mb-1">Best time</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{dest.bestTime}</dd>
+                  <dt className="eyebrow mb-2">Best time</dt>
+                  <dd className="text-sm leading-6 text-[var(--frost)]">{dest.bestTime}</dd>
                 </div>
                 <div>
-                  <dt className="eyebrow mb-1">Airport</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{dest.airport}</dd>
+                  <dt className="eyebrow mb-2">Airport</dt>
+                  <dd className="text-sm leading-6 text-[var(--frost)]">{dest.airport}</dd>
                 </div>
                 <div>
-                  <dt className="eyebrow mb-1">Known for</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{dest.knownFor}</dd>
+                  <dt className="eyebrow mb-2">Known for</dt>
+                  <dd className="text-sm leading-6 text-[var(--frost)]">{dest.knownFor}</dd>
                 </div>
               </dl>
             </div>
@@ -109,37 +100,36 @@ export default async function DestinationPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-16" style={{ borderTop: "1px solid rgba(168,216,234,0.08)" }}>
-        <div className="max-w-5xl mx-auto pt-12">
-          <p className="eyebrow mb-3">Activities</p>
-          <h2
-            className="font-display mb-8"
-            style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "var(--frost)", fontWeight: 600 }}
-          >
+      <section className="px-6 py-20 sm:py-28 section-divider">
+        <div className="mx-auto max-w-7xl">
+          <p className="eyebrow mb-4">Activities</p>
+          <h2 className="font-display mb-10 text-5xl font-medium italic leading-none text-[var(--frost)] sm:text-7xl">
             Things to do in {dest.name}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {destActivities.map((act) => {
               const Icon = act.icon;
               return (
                 <Link
                   key={act.slug}
                   href={`/destinations/${slug}/${act.slug}`}
-                  className={`card-glass p-6 block ${act.featured ? "card-featured" : ""}`}
+                  className="group relative flex min-h-[380px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
                 >
-                  <Icon size={22} style={{ color: act.featured ? "var(--aurora)" : "var(--ice)" }} className="mb-3" />
-                  <h3
-                    className="font-display text-lg font-semibold mb-2"
-                    style={{ color: "var(--frost)" }}
-                  >
-                    {act.name}
-                  </h3>
-                  <p className="text-sm mb-3" style={{ color: "var(--muted)", lineHeight: 1.6 }}>
-                    {act.short}
-                  </p>
-                  <span className="text-sm" style={{ color: act.featured ? "var(--aurora)" : "var(--ice)" }}>
-                    Book this activity →
-                  </span>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url('${activityPhotography[act.slug]}')`, filter: "brightness(0.74) contrast(1.08)" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.97)] via-[rgba(3,6,14,0.38)] to-transparent" />
+                  <div className="relative z-10 mt-auto p-7">
+                    <Icon size={22} className="mb-5 text-[var(--ice)]" />
+                    <h3 className="font-display mb-3 text-4xl font-medium italic leading-none text-[var(--frost)]">
+                      {act.name}
+                    </h3>
+                    <p className="mb-5 text-sm leading-7 text-[rgba(240,237,232,0.68)]">{act.short}</p>
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ice)]">
+                      Book this activity →
+                    </span>
+                  </div>
                 </Link>
               );
             })}
@@ -147,15 +137,12 @@ export default async function DestinationPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-16">
-        <div className="max-w-5xl mx-auto">
-          <h2
-            className="font-display mb-4"
-            style={{ fontSize: "clamp(22px, 3vw, 30px)", color: "var(--frost)", fontWeight: 600 }}
-          >
+      <section className="px-6 pb-24 sm:pb-32">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(7,16,31,0.72)] p-8 shadow-2xl backdrop-blur-xl sm:p-10">
+          <h2 className="font-display mb-4 text-4xl font-medium italic text-[var(--frost)]">
             Getting there
           </h2>
-          <div className="prose-lapland">
+          <div className="prose-lapland max-w-4xl">
             <p>
               The nearest airport is {dest.airport}. Direct charter flights operate from major UK
               airports during the winter season (November–April). Year-round, Finnair connects through

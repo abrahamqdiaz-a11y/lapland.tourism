@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CalendarRange, ArrowRight } from "lucide-react";
 import { destinations, activities } from "@/data/lapland-data";
 import { operators } from "@/data/operators";
+import { activityPhotography, destinationPhotography } from "@/data/editorial-visuals";
 
 type Props = { params: Promise<{ slug: string; activity: string }> };
 
@@ -47,50 +48,45 @@ export default async function CombinationPage({ params }: Props) {
   return (
     <>
       <section
-        className="relative px-6 py-20"
+        className="relative flex min-h-[78vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={{
-          background:
-            "linear-gradient(135deg, #0A0F1E 0%, #0D1B2A 60%, #0F2235 100%)",
+          backgroundImage: `linear-gradient(90deg, rgba(3,6,14,0.96) 0%, rgba(5,10,22,0.82) 48%, rgba(5,10,22,0.32) 100%), linear-gradient(180deg, rgba(3,6,14,0.12) 0%, rgba(3,6,14,0.82) 78%, var(--midnight) 100%), url('${activityPhotography[activitySlug]}')`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
-        <div
-          className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at top right, rgba(77,255,160,0.04), transparent 60%)",
-          }}
-        />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <nav className="text-xs mb-6" style={{ color: "var(--muted)" }}>
-            <Link href="/" className="hover:opacity-80">Home</Link>
-            {" › "}
-            <Link href={`/destinations/${slug}`} className="hover:opacity-80">{dest.name}</Link>
-            {" › "}
-            <span style={{ color: "var(--ice)" }}>{act.name}</span>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(77,255,160,0.16),transparent_32%)]" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <nav className="mb-8 text-xs uppercase tracking-[0.18em] text-[rgba(240,237,232,0.48)]">
+            <Link href="/" className="hover:text-[var(--ice)]">Home</Link>
+            {" / "}
+            <Link href={`/destinations/${slug}`} className="hover:text-[var(--ice)]">{dest.name}</Link>
+            {" / "}
+            <span className="text-[var(--ice)]">{act.name}</span>
           </nav>
-          {act.featured && (
-            <span className="badge-chip badge-aurora mb-4 inline-block">{act.badge}</span>
-          )}
+          <div className="mb-6 flex flex-wrap items-center gap-4">
+            <span className={`rounded-full border bg-[rgba(3,6,14,0.42)] p-4 backdrop-blur-md ${act.featured ? "border-[rgba(77,255,160,0.34)] text-[var(--aurora)]" : "border-[rgba(168,216,234,0.22)] text-[var(--ice)]"}`}>
+              <Icon size={28} />
+            </span>
+            {act.featured && <span className="badge-chip badge-aurora inline-block">{act.badge}</span>}
+            <span className="badge-chip">{dest.name}</span>
+          </div>
           <h1
-            className="font-display italic mt-2"
-            style={{
-              fontSize: "clamp(36px, 5vw, 60px)",
-              color: "var(--frost)",
-              fontWeight: 500,
-            }}
+            className="font-display max-w-6xl italic leading-[0.9] tracking-[-0.05em]"
+            style={{ fontSize: "clamp(58px, 9vw, 132px)", color: "var(--frost)", fontWeight: 500 }}
           >
             {act.name} in {dest.name}
           </h1>
-          <p className="mt-4 text-lg max-w-xl" style={{ color: "var(--muted)" }}>
+          <p className="mt-7 max-w-2xl text-xl leading-9 text-[rgba(240,237,232,0.76)]">
             {act.short}
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 space-y-8">
-            <div className="prose-lapland">
+      <section className="px-6 py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="space-y-8">
+            <div className="prose-lapland text-lg">
               <p>
                 {act.name} in {dest.name} is one of the most popular winter experiences in Finnish
                 Lapland. {act.short}
@@ -106,78 +102,50 @@ export default async function CombinationPage({ params }: Props) {
               </p>
             </div>
 
-            {/* Booking window tip */}
-            <div
-              className="flex gap-4 items-start p-5 rounded-2xl"
-              style={{
-                background: "rgba(13,27,42,0.8)",
-                border: "1px solid rgba(168,216,234,0.12)",
-              }}
-            >
-              <CalendarRange size={22} style={{ color: "var(--aurora)", flexShrink: 0 }} />
+            <div className="flex items-start gap-4 rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(7,16,31,0.72)] p-6 shadow-2xl backdrop-blur-xl">
+              <CalendarRange size={22} className="mt-1 shrink-0 text-[var(--aurora)]" />
               <div>
-                <p className="font-semibold mb-1" style={{ color: "var(--frost)" }}>
-                  Booking window tip
-                </p>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
+                <p className="mb-2 font-semibold text-[var(--frost)]">Booking window tip</p>
+                <p className="text-sm leading-7 text-[rgba(240,237,232,0.62)]">
                   Peak season slots (December–January) sell out 6–8 weeks in advance. For Christmas
                   week, book as early as September. March availability is usually more flexible.
                 </p>
               </div>
             </div>
 
-            {/* Operator CTA */}
             {operator ? (
-              <div
-                className="relative p-8 rounded-2xl"
-                style={{
-                  background: "rgba(13,27,42,0.9)",
-                  border: "1px solid rgba(168,216,234,0.15)",
-                }}
-              >
-                <span
-                  className="badge-paid-partner absolute top-5 right-5"
-                >
-                  Paid partner
-                </span>
-                <p className="eyebrow mb-3">Book with a trusted operator</p>
-                <h3
-                  className="font-display text-2xl font-semibold mb-3"
-                  style={{ color: "var(--frost)" }}
-                >
-                  {operator.name}
-                </h3>
-                <p className="text-sm mb-6" style={{ color: "rgba(240,237,232,0.8)", lineHeight: 1.7 }}>
-                  {operator.description}
-                </p>
-                <a
-                  href={operator.url + operator.utm}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Book now <ArrowRight size={16} />
-                </a>
-                <p className="mt-3 text-xs" style={{ color: "var(--muted)" }}>
-                  This is a paid partner placement.
-                </p>
+              <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(77,255,160,0.24)] bg-[rgba(7,16,31,0.86)] p-8 shadow-[0_0_46px_rgba(77,255,160,0.08)] backdrop-blur-xl">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(77,255,160,0.16),transparent_34%)]" />
+                <span className="badge-paid-partner absolute right-5 top-5">Paid partner</span>
+                <div className="relative z-10">
+                  <p className="eyebrow mb-4">Book with a trusted operator</p>
+                  <h3 className="font-display mb-4 text-4xl font-medium italic leading-none text-[var(--frost)]">
+                    {operator.name}
+                  </h3>
+                  <p className="mb-7 max-w-2xl text-sm leading-7 text-[rgba(240,237,232,0.76)]">
+                    {operator.description}
+                  </p>
+                  <a
+                    href={operator.url + operator.utm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 rounded-full border border-[rgba(77,255,160,0.42)] bg-[rgba(77,255,160,0.92)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[#061018] shadow-[0_0_38px_rgba(77,255,160,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_52px_rgba(77,255,160,0.42)]"
+                  >
+                    Book now <ArrowRight size={16} />
+                  </a>
+                  <p className="mt-4 text-xs text-[rgba(240,237,232,0.46)]">
+                    This is a paid partner placement.
+                  </p>
+                </div>
               </div>
             ) : (
-              <div
-                className="p-8 rounded-2xl"
-                style={{
-                  background: "rgba(168,216,234,0.04)",
-                  border: "1px solid rgba(168,216,234,0.12)",
-                }}
-              >
-                <p className="font-semibold mb-2" style={{ color: "var(--ice)" }}>
-                  Operator coming soon
-                </p>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
+              <div className="rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(168,216,234,0.04)] p-8 shadow-2xl backdrop-blur-xl">
+                <p className="mb-3 font-semibold text-[var(--ice)]">Operator coming soon</p>
+                <p className="text-sm leading-7 text-[rgba(240,237,232,0.62)]">
                   We&apos;re currently finding the best operator for {act.name.toLowerCase()} in{" "}
                   {dest.name}. Check back soon or get our free guide for the latest recommendations.
                 </p>
-                <Link href="/plan-your-trip" className="btn-secondary mt-4 inline-flex text-sm">
+                <Link href="/plan-your-trip" className="btn-secondary mt-5 inline-flex text-sm">
                   Get the free guide
                 </Link>
               </div>
@@ -185,69 +153,52 @@ export default async function CombinationPage({ params }: Props) {
           </div>
 
           <aside>
-            <div className="card-glass p-6 sticky top-24">
-              <div className="flex items-center gap-3 mb-5">
-                <Icon size={22} style={{ color: "var(--ice)" }} />
-                <h3 className="font-display text-lg font-semibold" style={{ color: "var(--frost)" }}>
-                  Key facts
-                </h3>
+            <div className="sticky top-24 overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.12)] bg-[rgba(7,16,31,0.72)] shadow-2xl backdrop-blur-xl">
+              <div
+                className="h-44 bg-cover bg-center"
+                style={{ backgroundImage: `url('${destinationPhotography[slug]}')`, filter: "brightness(0.8)" }}
+              />
+              <div className="p-7">
+                <div className="mb-5 flex items-center gap-3">
+                  <Icon size={22} className="text-[var(--ice)]" />
+                  <h3 className="font-display text-2xl font-medium italic text-[var(--frost)]">Key facts</h3>
+                </div>
+                <dl className="space-y-5">
+                  <div><dt className="eyebrow mb-2">Best season</dt><dd className="text-sm text-[var(--frost)]">{act.bestSeason}</dd></div>
+                  <div><dt className="eyebrow mb-2">Duration</dt><dd className="text-sm text-[var(--frost)]">{act.duration}</dd></div>
+                  <div><dt className="eyebrow mb-2">Difficulty</dt><dd className="text-sm text-[var(--frost)]">{act.difficulty}</dd></div>
+                  <div><dt className="eyebrow mb-2">Price range</dt><dd className="text-sm text-[var(--frost)]">{act.priceRange}</dd></div>
+                  <div><dt className="eyebrow mb-2">Base</dt><dd className="text-sm text-[var(--frost)]">{dest.name}</dd></div>
+                </dl>
               </div>
-              <dl className="space-y-4">
-                <div>
-                  <dt className="eyebrow mb-1">Best season</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.bestSeason}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Duration</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.duration}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Difficulty</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.difficulty}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Price range</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{act.priceRange}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow mb-1">Base</dt>
-                  <dd className="text-sm" style={{ color: "var(--frost)" }}>{dest.name}</dd>
-                </div>
-              </dl>
             </div>
           </aside>
         </div>
       </section>
 
       {moreActivities.length > 0 && (
-        <section className="px-6 pb-16" style={{ borderTop: "1px solid rgba(168,216,234,0.08)" }}>
-          <div className="max-w-5xl mx-auto pt-12">
-            <p className="eyebrow mb-3">More in {dest.name}</p>
-            <h2
-              className="font-display mb-8"
-              style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "var(--frost)", fontWeight: 600 }}
-            >
+        <section className="px-6 py-20 sm:py-28 section-divider">
+          <div className="mx-auto max-w-7xl">
+            <p className="eyebrow mb-4">More in {dest.name}</p>
+            <h2 className="font-display mb-10 text-5xl font-medium italic leading-none text-[var(--frost)] sm:text-7xl">
               Other activities in {dest.name}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
               {moreActivities.map((a) => {
                 const AIcon = a.icon;
                 return (
                   <Link
                     key={a.slug}
                     href={`/destinations/${slug}/${a.slug}`}
-                    className="card-glass p-6 block"
+                    className="group relative flex min-h-[340px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
                   >
-                    <AIcon size={20} style={{ color: "var(--ice)" }} className="mb-3" />
-                    <h3
-                      className="font-display text-lg font-semibold mb-2"
-                      style={{ color: "var(--frost)" }}
-                    >
-                      {a.name}
-                    </h3>
-                    <p className="text-sm" style={{ color: "var(--muted)", lineHeight: 1.6 }}>
-                      {a.short}
-                    </p>
+                    <div className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${activityPhotography[a.slug]}')`, filter: "brightness(0.72) contrast(1.08)" }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.97)] via-[rgba(3,6,14,0.35)] to-transparent" />
+                    <div className="relative z-10 mt-auto p-7">
+                      <AIcon size={20} className="mb-4 text-[var(--ice)]" />
+                      <h3 className="font-display mb-3 text-4xl font-medium italic text-[var(--frost)]">{a.name}</h3>
+                      <p className="text-sm leading-7 text-[rgba(240,237,232,0.66)]">{a.short}</p>
+                    </div>
                   </Link>
                 );
               })}
