@@ -11,7 +11,7 @@ export const heroPhotography = {
 
 export const destinationPhotography: Record<string, string> = {
   rovaniemi:
-    "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=1400&q=80",
+    "https://unsplash.com/photos/a-reindeer-wearing-a-harness-standing-next-to-a-tree-WpcjfHXOYoU",
   levi: "https://images.unsplash.com/photo-1483168527879-c66136b56105?auto=format&fit=crop&w=1400&q=80",
   saariselka:
     "https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=1400&q=80",
