@@ -48,7 +48,7 @@ export default function HomePage() {
         className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 py-28"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(3,6,14,0.94) 0%, rgba(5,10,22,0.76) 42%, rgba(5,10,22,0.2) 100%), linear-gradient(180deg, rgba(3,6,14,0.18) 0%, rgba(3,6,14,0.78) 74%, var(--midnight) 100%), url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=2400&q=85')",
+            "linear-gradient(90deg, rgba(3,6,14,0.94) 0%, rgba(5,10,22,0.76) 42%, rgba(5,10,22,0.2) 100%), linear-gradient(180deg, rgba(3,6,14,0.18) 0%, rgba(3,6,14,0.78) 74%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
