@@ -48,7 +48,7 @@ export default function HomePage() {
         className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 py-28"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(7,24,39,0.94) 0%, rgba(11,31,53,0.76) 42%, rgba(11,31,53,0.2) 100%), linear-gradient(180deg, rgba(7,24,39,0.18) 0%, rgba(7,24,39,0.78) 74%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
+            "linear-gradient(90deg, rgba(7,24,39,0.88) 0%, rgba(7,24,39,0.55) 48%, rgba(7,24,39,0.0) 100%), linear-gradient(180deg, rgba(7,24,39,0.1) 0%, rgba(7,24,39,0.72) 78%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -57,7 +57,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at 72% 18%, rgba(84,224,166,0.22), transparent 32%), radial-gradient(circle at 20% 88%, rgba(201,214,223,0.12), transparent 34%)",
+              "radial-gradient(circle at 72% 18%, rgba(84,224,166,0.14), transparent 28%)",
           }}
         />
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-12 lg:grid-cols-[minmax(0,1fr)_340px]">
@@ -92,13 +92,13 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/destinations"
-                className="inline-flex items-center gap-3 rounded-full border border-[rgba(248,250,252,0.28)] bg-[rgba(11,31,53,0.24)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[var(--frost)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(248,250,252,0.58)] hover:bg-[rgba(248,250,252,0.08)]"
+                className="inline-flex items-center gap-3 rounded-full border border-[rgba(248,250,252,0.38)] bg-transparent px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[var(--frost)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(248,250,252,0.7)] hover:bg-[rgba(7,24,39,0.28)]"
               >
                 Pick a destination
               </Link>
             </div>
           </div>
-          <aside className="hidden rounded-[2rem] border border-[rgba(248,250,252,0.14)] bg-[rgba(7,24,39,0.42)] p-6 shadow-2xl backdrop-blur-xl lg:block">
+          <aside className="hidden rounded-[2rem] border border-[rgba(248,250,252,0.14)] bg-[rgba(7,24,39,0.72)] p-6 shadow-2xl lg:block">
             <p className="eyebrow mb-4">Traveller intelligence</p>
             <p className="font-display text-3xl italic leading-tight text-[var(--frost)]">
               Dark skies, quiet forests and operators worth knowing before you
