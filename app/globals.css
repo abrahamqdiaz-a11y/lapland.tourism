@@ -11,6 +11,10 @@
   --muted: #6B7FA3;
   --border: rgba(168,216,234,0.12);
   --card-bg: rgba(13,27,42,0.8);
+  --snow: #F4F8FF;
+  --snow-deep: #E6EEF8;
+  --snow-text: #0D1B2A;
+  --snow-muted: rgba(13,27,42,0.52);
 }
 
 body {

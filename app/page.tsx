@@ -198,6 +198,155 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Snow White — Winter Wonderland */}
+      <section
+        className="relative overflow-hidden px-6 py-24 sm:py-36"
+        style={{ background: "linear-gradient(180deg, var(--snow) 0%, var(--snow-deep) 100%)" }}
+      >
+        {/* Decorative snow crystals */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+          {[
+            { size: 320, top: "-6%", left: "-4%", opacity: 0.28 },
+            { size: 220, top: "8%", right: "-3%", opacity: 0.18 },
+            { size: 160, bottom: "10%", left: "38%", opacity: 0.14 },
+            { size: 260, bottom: "-8%", right: "8%", opacity: 0.22 },
+          ].map((s, i) => (
+            <svg
+              key={i}
+              width={s.size}
+              height={s.size}
+              viewBox="0 0 120 120"
+              fill="none"
+              style={{
+                position: "absolute",
+                top: s.top,
+                left: s.left,
+                right: (s as { right?: string }).right,
+                bottom: (s as { bottom?: string }).bottom,
+                opacity: s.opacity,
+              }}
+            >
+              {/* Six-armed snowflake */}
+              {[0, 60, 120, 180, 240, 300].map((deg) => (
+                <g key={deg} transform={`rotate(${deg} 60 60)`}>
+                  <line x1="60" y1="10" x2="60" y2="110" stroke="#A8D8EA" strokeWidth="3" strokeLinecap="round" />
+                  <line x1="60" y1="32" x2="42" y2="22" stroke="#A8D8EA" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="60" y1="32" x2="78" y2="22" stroke="#A8D8EA" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="60" y1="58" x2="38" y2="46" stroke="#A8D8EA" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="60" y1="58" x2="82" y2="46" stroke="#A8D8EA" strokeWidth="2" strokeLinecap="round" />
+                </g>
+              ))}
+              <circle cx="60" cy="60" r="5" fill="#A8D8EA" />
+            </svg>
+          ))}
+        </div>
+
+        <div className="relative mx-auto max-w-7xl">
+          {/* Heading */}
+          <div className="mb-16 max-w-3xl">
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "rgba(13,27,42,0.48)" }}
+            >
+              The experience
+            </p>
+            <h2
+              className="font-display leading-none tracking-[-0.03em]"
+              style={{
+                fontSize: "clamp(42px, 6vw, 82px)",
+                color: "var(--snow-text)",
+                fontWeight: 500,
+              }}
+            >
+              A world wrapped
+              <br />
+              in white silence
+            </h2>
+          </div>
+
+          {/* Stats row */}
+          <div className="mb-16 grid grid-cols-2 gap-5 sm:grid-cols-4">
+            {[
+              { value: "200+", label: "cm average annual snowfall" },
+              { value: "65",   label: "days of polar night in winter" },
+              { value: "−30°", label: "C deep winter lows" },
+              { value: "4",    label: "distinct seasons to explore" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-[1.5rem] border p-6 shadow-sm"
+                style={{
+                  background: "rgba(255,255,255,0.72)",
+                  borderColor: "rgba(168,216,234,0.45)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <p
+                  className="font-display mb-1 leading-none tracking-tight"
+                  style={{ fontSize: "clamp(36px,5vw,60px)", color: "var(--snow-text)", fontWeight: 500 }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-xs leading-5" style={{ color: "var(--snow-muted)" }}>
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              {
+                eyebrow: "Snow & silence",
+                title: "Forests buried in snow",
+                body: "Step into a landscape of snow-laden pines, frozen lakes and air so crisp it resets everything. Lapland's winter wilderness is unlike anywhere else on earth.",
+                accent: "rgba(168,216,234,0.55)",
+              },
+              {
+                eyebrow: "Northern lights",
+                title: "Aurora over white fields",
+                body: "The contrast of emerald aurora against a snow-white expanse is Lapland's most iconic sight. Clear dark skies and reflective snowfields make every sighting unforgettable.",
+                accent: "rgba(77,255,160,0.45)",
+              },
+              {
+                eyebrow: "Arctic crafts",
+                title: "Ice castles & snow hotels",
+                body: "Sleep inside walls of compressed snow, dine in ice restaurants and wander through snow sculpture galleries — architecture born from winter itself.",
+                accent: "rgba(168,216,234,0.35)",
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="group relative overflow-hidden rounded-[2rem] border p-8 shadow-md transition duration-500 hover:-translate-y-1 hover:shadow-xl"
+                style={{
+                  background: "rgba(255,255,255,0.82)",
+                  borderColor: "rgba(168,216,234,0.38)",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
+                <div
+                  className="absolute inset-x-0 top-0 h-[3px]"
+                  style={{ background: `linear-gradient(90deg, ${card.accent}, transparent)` }}
+                />
+                <p className="eyebrow mb-5" style={{ color: "rgba(13,27,42,0.42)" }}>
+                  {card.eyebrow}
+                </p>
+                <h3
+                  className="font-display mb-4 italic leading-tight"
+                  style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--snow-text)", fontWeight: 500 }}
+                >
+                  {card.title}
+                </h3>
+                <p className="text-sm leading-7" style={{ color: "var(--snow-muted)" }}>
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Activities */}
       <section className="relative px-6 py-24 sm:py-32 section-divider">
         <div className="mx-auto max-w-7xl">
