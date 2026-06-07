@@ -49,7 +49,7 @@ export default async function ActivityPage({ params }: Props) {
             <span className="text-[var(--ice)]">{act.name}</span>
           </nav>
           <div className="mb-6 flex items-center gap-4">
-            <span className={`rounded-full border bg-[rgba(7,24,39,0.42)] p-4 backdrop-blur-md ${act.featured ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]" : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"}`}>
+            <span className={`rounded-full border bg-[rgba(7,24,39,0.65)] p-4 ${act.featured ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]" : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"}`}>
               <Icon size={28} />
             </span>
             {act.badge && <span className={`badge-chip ${act.featured ? "badge-aurora" : ""}`}>{act.badge}</span>}

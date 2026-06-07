@@ -161,14 +161,14 @@ export default function HomePage() {
                     className="absolute inset-0 scale-100 bg-cover bg-center transition duration-700 group-hover:scale-110"
                     style={{
                       backgroundImage: `url('${destinationPhotography[dest.slug]}')`,
-                      filter: "saturate(0.92) contrast(1.08) brightness(0.78)",
+                      filter: "saturate(1.05) contrast(1.06) brightness(0.92)",
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.96)] via-[rgba(7,24,39,0.34)] to-[rgba(7,24,39,0.16)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.92)] via-[rgba(7,24,39,0.12)] to-transparent" />
                   <div className="relative z-10 mt-auto w-full p-7">
                     <div className="mb-5 flex items-center justify-between gap-3">
                       <span className="badge-chip">{dest.badge}</span>
-                      <span className="rounded-full border border-[rgba(248,250,252,0.18)] bg-[rgba(7,24,39,0.4)] p-3 text-[var(--ice)] backdrop-blur-md">
+                      <span className="rounded-full border border-[rgba(248,250,252,0.18)] bg-[rgba(7,24,39,0.6)] p-3 text-[var(--ice)]">
                         <Icon size={20} />
                       </span>
                     </div>
@@ -381,17 +381,17 @@ export default function HomePage() {
                     className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
                     style={{
                       backgroundImage: `url('${activityPhotography[act.slug]}')`,
-                      filter: "saturate(0.9) contrast(1.08) brightness(0.72)",
+                      filter: "saturate(1.05) contrast(1.06) brightness(0.9)",
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.97)] via-[rgba(7,24,39,0.38)] to-[rgba(7,24,39,0.1)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.93)] via-[rgba(7,24,39,0.10)] to-transparent" />
                   {featured && (
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_32%_20%,rgba(84,224,166,0.2),transparent_32%)]" />
                   )}
                   <div className="relative z-10 mt-auto p-7 sm:p-8">
                     <div className="mb-5 flex items-center gap-3">
                       <span
-                        className={`rounded-full border bg-[rgba(7,24,39,0.42)] p-3 backdrop-blur-md ${
+                        className={`rounded-full border bg-[rgba(7,24,39,0.65)] p-3 ${
                           featured
                             ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]"
                             : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"
