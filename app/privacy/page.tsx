@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         className="relative flex min-h-[58vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={editorialHero(heroPhotography.winterRoad)}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(168,216,234,0.12),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(201,214,223,0.12),transparent_32%)]" />
         <div className="relative z-10 mx-auto w-full max-w-5xl">
           <p className="eyebrow mb-5">Legal</p>
           <h1
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           >
             Privacy Policy
           </h1>
-          <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[rgba(240,237,232,0.48)]">
+          <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[rgba(248,250,252,0.48)]">
             Last updated: January 2025
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
           ].map((section) => (
             <div
               key={section.title}
-              className="rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(7,16,31,0.66)] p-7 shadow-2xl backdrop-blur-xl sm:p-9"
+              className="rounded-[2rem] border border-[rgba(248,250,252,0.1)] bg-[rgba(11,31,53,0.66)] p-7 shadow-2xl backdrop-blur-xl sm:p-9"
             >
               <h2 className="font-display mb-5 text-3xl font-medium italic text-[var(--frost)]">
                 {section.title}

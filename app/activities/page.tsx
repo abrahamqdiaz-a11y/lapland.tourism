@@ -21,7 +21,7 @@ export default function ActivitiesPage() {
         className="relative flex min-h-[72vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={editorialHero(heroPhotography.polarForest)}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(77,255,160,0.16),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(84,224,166,0.16),transparent_30%)]" />
         <div className="relative z-10 mx-auto w-full max-w-7xl">
           <p className="eyebrow mb-5">Activities</p>
           <h1
@@ -35,7 +35,7 @@ export default function ActivitiesPage() {
           >
             What do you want to do?
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[rgba(240,237,232,0.72)]">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[rgba(248,250,252,0.72)]">
             From snowmobile expeditions to aurora hunts — Finnish Lapland&apos;s signature experiences.
           </p>
         </div>
@@ -49,10 +49,10 @@ export default function ActivitiesPage() {
               <Link
                 key={act.slug}
                 href={`/activities/${act.slug}`}
-                className={`group relative flex min-h-[380px] overflow-hidden rounded-[2rem] border bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2 ${
+                className={`group relative flex min-h-[380px] overflow-hidden rounded-[2rem] border bg-[#071827] shadow-2xl transition duration-500 hover:-translate-y-2 ${
                   act.featured
-                    ? "border-[rgba(77,255,160,0.36)] lg:col-span-4 lg:min-h-[600px]"
-                    : "border-[rgba(240,237,232,0.1)] lg:col-span-2"
+                    ? "border-[rgba(84,224,166,0.36)] lg:col-span-4 lg:min-h-[600px]"
+                    : "border-[rgba(248,250,252,0.1)] lg:col-span-2"
                 } ${index === 1 || index === 4 ? "lg:translate-y-10" : ""}`}
               >
                 <div
@@ -62,17 +62,17 @@ export default function ActivitiesPage() {
                     filter: "saturate(0.9) contrast(1.08) brightness(0.72)",
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.97)] via-[rgba(3,6,14,0.38)] to-[rgba(3,6,14,0.08)]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.97)] via-[rgba(7,24,39,0.38)] to-[rgba(7,24,39,0.08)]" />
                 {act.featured && (
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_18%,rgba(77,255,160,0.2),transparent_34%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_18%,rgba(84,224,166,0.2),transparent_34%)]" />
                 )}
                 <div className="relative z-10 mt-auto p-7 sm:p-8">
                   <div className="mb-5 flex flex-wrap items-center gap-3">
                     <span
-                      className={`rounded-full border bg-[rgba(3,6,14,0.42)] p-3 backdrop-blur-md ${
+                      className={`rounded-full border bg-[rgba(7,24,39,0.42)] p-3 backdrop-blur-md ${
                         act.featured
-                          ? "border-[rgba(77,255,160,0.34)] text-[var(--aurora)]"
-                          : "border-[rgba(168,216,234,0.22)] text-[var(--ice)]"
+                          ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]"
+                          : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"
                       }`}
                     >
                       <Icon size={20} />
@@ -90,10 +90,10 @@ export default function ActivitiesPage() {
                   >
                     {act.name}
                   </h2>
-                  <p className="mb-5 max-w-lg text-sm leading-7 text-[rgba(240,237,232,0.7)]">
+                  <p className="mb-5 max-w-lg text-sm leading-7 text-[rgba(248,250,252,0.7)]">
                     {act.short}
                   </p>
-                  <div className="mb-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.16em] text-[rgba(240,237,232,0.48)]">
+                  <div className="mb-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.16em] text-[rgba(248,250,252,0.48)]">
                     <span>{act.duration}</span>
                     <span>·</span>
                     <span>{act.priceRange}</span>

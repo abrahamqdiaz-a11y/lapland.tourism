@@ -35,17 +35,17 @@ export const activityPhotography: Record<string, string> = {
 };
 
 export const seasonMoods = [
-  "linear-gradient(145deg, rgba(3,7,18,0.92), rgba(12,33,67,0.78)), url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(9,18,32,0.85), rgba(166,122,58,0.42)), url('https://images.unsplash.com/photo-1455156218388-5e61b526818b?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(10,15,30,0.82), rgba(176,199,213,0.34)), url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(10,15,30,0.78), rgba(218,143,79,0.38)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.92), rgba(16,42,67,0.78)), url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(11,31,53,0.85), rgba(166,122,58,0.42)), url('https://images.unsplash.com/photo-1455156218388-5e61b526818b?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.82), rgba(176,199,213,0.34)), url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.78), rgba(218,143,79,0.38)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
 ];
 
 export const blogAccents = ["Aurora file", "Field notes", "Arctic brief"];
 
 export function editorialHero(image: string) {
   return {
-    backgroundImage: `linear-gradient(90deg, rgba(3,6,14,0.95) 0%, rgba(5,10,22,0.82) 48%, rgba(5,10,22,0.34) 100%), linear-gradient(180deg, rgba(3,6,14,0.14) 0%, rgba(3,6,14,0.82) 78%, var(--midnight) 100%), url('${image}')`,
+    backgroundImage: `linear-gradient(90deg, rgba(7,24,39,0.95) 0%, rgba(11,31,53,0.82) 48%, rgba(11,31,53,0.34) 100%), linear-gradient(180deg, rgba(7,24,39,0.14) 0%, rgba(7,24,39,0.82) 78%, var(--midnight) 100%), url('${image}')`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
