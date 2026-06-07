@@ -69,7 +69,7 @@ export default function ActivitiesPage() {
                 <div className="relative z-10 mt-auto p-7 sm:p-8">
                   <div className="mb-5 flex flex-wrap items-center gap-3">
                     <span
-                      className={`rounded-full border bg-[rgba(7,24,39,0.42)] p-3 backdrop-blur-md ${
+                      className={`rounded-full border bg-[rgba(7,24,39,0.65)] p-3 ${
                         act.featured
                           ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]"
                           : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"
