@@ -48,18 +48,11 @@ export default function HomePage() {
         className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 py-28"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(7,24,39,0.88) 0%, rgba(7,24,39,0.55) 48%, rgba(7,24,39,0.0) 100%), linear-gradient(180deg, rgba(7,24,39,0.1) 0%, rgba(7,24,39,0.72) 78%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
-          backgroundPosition: "center",
+            "linear-gradient(180deg, rgba(7,24,39,0.0) 0%, rgba(7,24,39,0.82) 90%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
+          backgroundPosition: "center 40%",
           backgroundSize: "cover",
         }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle at 72% 18%, rgba(84,224,166,0.14), transparent 28%)",
-          }}
-        />
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-12 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div className="max-w-5xl pt-20">
             <p className="eyebrow mb-6">Finnish Lapland</p>
@@ -69,7 +62,7 @@ export default function HomePage() {
                 fontSize: "clamp(76px, 12vw, 168px)",
                 color: "var(--frost)",
                 fontWeight: 500,
-                textShadow: "0 24px 80px rgba(0,0,0,0.75)",
+                textShadow: "0 2px 24px rgba(0,0,0,0.9), 0 8px 64px rgba(0,0,0,0.8)",
               }}
             >
               Your Arctic adventure
