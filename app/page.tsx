@@ -32,10 +32,10 @@ const activityPhotography: Record<string, string> = {
 };
 
 const seasonMoods = [
-  "linear-gradient(145deg, rgba(3,7,18,0.92), rgba(12,33,67,0.78)), url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(9,18,32,0.85), rgba(166,122,58,0.42)), url('https://images.unsplash.com/photo-1455156218388-5e61b526818b?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(10,15,30,0.82), rgba(176,199,213,0.34)), url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1400&q=80')",
-  "linear-gradient(145deg, rgba(10,15,30,0.78), rgba(218,143,79,0.38)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.88), rgba(30,58,52,0.62)), url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(11,31,53,0.85), rgba(166,122,58,0.42)), url('https://images.unsplash.com/photo-1455156218388-5e61b526818b?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.78), rgba(201,214,223,0.28)), url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1400&q=80')",
+  "linear-gradient(145deg, rgba(7,24,39,0.75), rgba(218,143,79,0.38)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
 ];
 
 const blogAccents = ["Aurora file", "Field notes", "Arctic brief"];
@@ -48,7 +48,7 @@ export default function HomePage() {
         className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 py-28"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(3,6,14,0.94) 0%, rgba(5,10,22,0.76) 42%, rgba(5,10,22,0.2) 100%), linear-gradient(180deg, rgba(3,6,14,0.18) 0%, rgba(3,6,14,0.78) 74%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
+            "linear-gradient(90deg, rgba(7,24,39,0.94) 0%, rgba(11,31,53,0.76) 42%, rgba(11,31,53,0.2) 100%), linear-gradient(180deg, rgba(7,24,39,0.18) 0%, rgba(7,24,39,0.78) 74%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -57,7 +57,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at 72% 18%, rgba(77,255,160,0.22), transparent 32%), radial-gradient(circle at 20% 88%, rgba(168,216,234,0.12), transparent 34%)",
+              "radial-gradient(circle at 72% 18%, rgba(84,224,166,0.22), transparent 32%), radial-gradient(circle at 20% 88%, rgba(201,214,223,0.12), transparent 34%)",
           }}
         />
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-12 lg:grid-cols-[minmax(0,1fr)_340px]">
@@ -78,7 +78,7 @@ export default function HomePage() {
             </h1>
             <p
               className="mb-10 max-w-2xl text-lg sm:text-xl"
-              style={{ color: "rgba(240,237,232,0.76)", lineHeight: 1.8 }}
+              style={{ color: "rgba(248,250,252,0.76)", lineHeight: 1.8 }}
             >
               The independent traveller&#39;s guide to Finnish Lapland —
               destinations, activities and trusted local operators.
@@ -86,32 +86,32 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/activities"
-                className="inline-flex items-center gap-3 rounded-full border border-[rgba(77,255,160,0.42)] bg-[rgba(77,255,160,0.92)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[#061018] shadow-[0_0_38px_rgba(77,255,160,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_52px_rgba(77,255,160,0.42)]"
+                className="inline-flex items-center gap-3 rounded-full border border-[rgba(84,224,166,0.42)] bg-[rgba(84,224,166,0.92)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[#071827] shadow-[0_0_38px_rgba(84,224,166,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_52px_rgba(84,224,166,0.42)]"
               >
                 Explore activities <ArrowRight size={16} />
               </Link>
               <Link
                 href="/destinations"
-                className="inline-flex items-center gap-3 rounded-full border border-[rgba(240,237,232,0.28)] bg-[rgba(5,10,22,0.24)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[var(--frost)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(240,237,232,0.58)] hover:bg-[rgba(240,237,232,0.08)]"
+                className="inline-flex items-center gap-3 rounded-full border border-[rgba(248,250,252,0.28)] bg-[rgba(11,31,53,0.24)] px-7 py-4 text-sm font-semibold tracking-[0.04em] text-[var(--frost)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(248,250,252,0.58)] hover:bg-[rgba(248,250,252,0.08)]"
               >
                 Pick a destination
               </Link>
             </div>
           </div>
-          <aside className="hidden rounded-[2rem] border border-[rgba(240,237,232,0.14)] bg-[rgba(6,12,24,0.42)] p-6 shadow-2xl backdrop-blur-xl lg:block">
+          <aside className="hidden rounded-[2rem] border border-[rgba(248,250,252,0.14)] bg-[rgba(7,24,39,0.42)] p-6 shadow-2xl backdrop-blur-xl lg:block">
             <p className="eyebrow mb-4">Traveller intelligence</p>
             <p className="font-display text-3xl italic leading-tight text-[var(--frost)]">
               Dark skies, quiet forests and operators worth knowing before you
               go.
             </p>
-            <p className="mt-6 text-sm leading-7 text-[rgba(240,237,232,0.58)]">
+            <p className="mt-6 text-sm leading-7 text-[rgba(248,250,252,0.58)]">
               Trusted by 12,000+ travellers from the UK, US &amp; Europe
             </p>
           </aside>
         </div>
-        <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-[rgba(240,237,232,0.56)] sm:flex">
+        <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-[rgba(248,250,252,0.56)] sm:flex">
           <span>Scroll</span>
-          <span className="h-12 w-px bg-gradient-to-b from-[rgba(240,237,232,0.7)] to-transparent" />
+          <span className="h-12 w-px bg-gradient-to-b from-[rgba(248,250,252,0.7)] to-transparent" />
         </div>
       </section>
 
@@ -121,7 +121,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, var(--midnight), #050914 45%, var(--midnight))",
+              "linear-gradient(180deg, var(--midnight), #071827 45%, var(--midnight))",
           }}
         />
         <div className="relative mx-auto max-w-7xl">
@@ -141,7 +141,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/destinations"
-              className="hidden items-center gap-2 rounded-full border border-[rgba(168,216,234,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(168,216,234,0.55)] sm:flex"
+              className="hidden items-center gap-2 rounded-full border border-[rgba(201,214,223,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(201,214,223,0.55)] sm:flex"
             >
               See all destinations <ArrowRight size={14} />
             </Link>
@@ -153,7 +153,7 @@ export default function HomePage() {
                 <Link
                   key={dest.slug}
                   href={`/destinations/${dest.slug}`}
-                  className={`group relative flex min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2 hover:border-[rgba(168,216,234,0.38)] md:min-h-[520px] ${
+                  className={`group relative flex min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(248,250,252,0.1)] bg-[#071827] shadow-2xl transition duration-500 hover:-translate-y-2 hover:border-[rgba(201,214,223,0.38)] md:min-h-[520px] ${
                     index === 0 ? "xl:mt-16" : index === 2 ? "xl:mt-10" : ""
                   }`}
                 >
@@ -164,18 +164,18 @@ export default function HomePage() {
                       filter: "saturate(0.92) contrast(1.08) brightness(0.78)",
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.96)] via-[rgba(3,6,14,0.34)] to-[rgba(3,6,14,0.16)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.96)] via-[rgba(7,24,39,0.34)] to-[rgba(7,24,39,0.16)]" />
                   <div className="relative z-10 mt-auto w-full p-7">
                     <div className="mb-5 flex items-center justify-between gap-3">
                       <span className="badge-chip">{dest.badge}</span>
-                      <span className="rounded-full border border-[rgba(240,237,232,0.18)] bg-[rgba(3,6,14,0.4)] p-3 text-[var(--ice)] backdrop-blur-md">
+                      <span className="rounded-full border border-[rgba(248,250,252,0.18)] bg-[rgba(7,24,39,0.4)] p-3 text-[var(--ice)] backdrop-blur-md">
                         <Icon size={20} />
                       </span>
                     </div>
                     <h3 className="font-display mb-2 text-4xl font-medium italic leading-none text-[var(--frost)]">
                       {dest.name}
                     </h3>
-                    <p className="mb-5 text-sm leading-6 text-[rgba(240,237,232,0.68)]">
+                    <p className="mb-5 text-sm leading-6 text-[rgba(248,250,252,0.68)]">
                       {dest.tagline}
                     </p>
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ice)]">
@@ -229,14 +229,14 @@ export default function HomePage() {
               {/* Six-armed snowflake */}
               {[0, 60, 120, 180, 240, 300].map((deg) => (
                 <g key={deg} transform={`rotate(${deg} 60 60)`}>
-                  <line x1="60" y1="10" x2="60" y2="110" stroke="#A8D8EA" strokeWidth="3" strokeLinecap="round" />
-                  <line x1="60" y1="32" x2="42" y2="22" stroke="#A8D8EA" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="60" y1="32" x2="78" y2="22" stroke="#A8D8EA" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="60" y1="58" x2="38" y2="46" stroke="#A8D8EA" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="60" y1="58" x2="82" y2="46" stroke="#A8D8EA" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="60" y1="10" x2="60" y2="110" stroke="#C9D6DF" strokeWidth="3" strokeLinecap="round" />
+                  <line x1="60" y1="32" x2="42" y2="22" stroke="#C9D6DF" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="60" y1="32" x2="78" y2="22" stroke="#C9D6DF" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="60" y1="58" x2="38" y2="46" stroke="#C9D6DF" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="60" y1="58" x2="82" y2="46" stroke="#C9D6DF" strokeWidth="2" strokeLinecap="round" />
                 </g>
               ))}
-              <circle cx="60" cy="60" r="5" fill="#A8D8EA" />
+              <circle cx="60" cy="60" r="5" fill="#C9D6DF" />
             </svg>
           ))}
         </div>
@@ -246,7 +246,7 @@ export default function HomePage() {
           <div className="mb-16 max-w-3xl">
             <p
               className="eyebrow mb-4"
-              style={{ color: "rgba(13,27,42,0.48)" }}
+              style={{ color: "rgba(11,31,53,0.48)" }}
             >
               The experience
             </p>
@@ -277,7 +277,7 @@ export default function HomePage() {
                 className="rounded-[1.5rem] border p-6 shadow-sm"
                 style={{
                   background: "rgba(255,255,255,0.72)",
-                  borderColor: "rgba(168,216,234,0.45)",
+                  borderColor: "rgba(201,214,223,0.45)",
                   backdropFilter: "blur(8px)",
                 }}
               >
@@ -301,19 +301,19 @@ export default function HomePage() {
                 eyebrow: "Snow & silence",
                 title: "Forests buried in snow",
                 body: "Step into a landscape of snow-laden pines, frozen lakes and air so crisp it resets everything. Lapland's winter wilderness is unlike anywhere else on earth.",
-                accent: "rgba(168,216,234,0.55)",
+                accent: "rgba(201,214,223,0.55)",
               },
               {
                 eyebrow: "Northern lights",
                 title: "Aurora over white fields",
                 body: "The contrast of emerald aurora against a snow-white expanse is Lapland's most iconic sight. Clear dark skies and reflective snowfields make every sighting unforgettable.",
-                accent: "rgba(77,255,160,0.45)",
+                accent: "rgba(84,224,166,0.45)",
               },
               {
                 eyebrow: "Arctic crafts",
                 title: "Ice castles & snow hotels",
                 body: "Sleep inside walls of compressed snow, dine in ice restaurants and wander through snow sculpture galleries — architecture born from winter itself.",
-                accent: "rgba(168,216,234,0.35)",
+                accent: "rgba(201,214,223,0.35)",
               },
             ].map((card) => (
               <div
@@ -321,7 +321,7 @@ export default function HomePage() {
                 className="group relative overflow-hidden rounded-[2rem] border p-8 shadow-md transition duration-500 hover:-translate-y-1 hover:shadow-xl"
                 style={{
                   background: "rgba(255,255,255,0.82)",
-                  borderColor: "rgba(168,216,234,0.38)",
+                  borderColor: "rgba(201,214,223,0.38)",
                   backdropFilter: "blur(10px)",
                 }}
               >
@@ -329,7 +329,7 @@ export default function HomePage() {
                   className="absolute inset-x-0 top-0 h-[3px]"
                   style={{ background: `linear-gradient(90deg, ${card.accent}, transparent)` }}
                 />
-                <p className="eyebrow mb-5" style={{ color: "rgba(13,27,42,0.42)" }}>
+                <p className="eyebrow mb-5" style={{ color: "rgba(11,31,53,0.42)" }}>
                   {card.eyebrow}
                 </p>
                 <h3
@@ -371,10 +371,10 @@ export default function HomePage() {
                 <Link
                   key={act.slug}
                   href={`/activities/${act.slug}`}
-                  className={`group relative flex min-h-[360px] overflow-hidden rounded-[2rem] border bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2 ${
+                  className={`group relative flex min-h-[360px] overflow-hidden rounded-[2rem] border bg-[#071827] shadow-2xl transition duration-500 hover:-translate-y-2 ${
                     featured
-                      ? "border-[rgba(77,255,160,0.36)] lg:col-span-4 lg:min-h-[560px]"
-                      : "border-[rgba(240,237,232,0.1)] lg:col-span-2 lg:min-h-[360px]"
+                      ? "border-[rgba(84,224,166,0.36)] lg:col-span-4 lg:min-h-[560px]"
+                      : "border-[rgba(248,250,252,0.1)] lg:col-span-2 lg:min-h-[360px]"
                   } ${index === 1 || index === 4 ? "lg:translate-y-10" : ""}`}
                 >
                   <div
@@ -384,17 +384,17 @@ export default function HomePage() {
                       filter: "saturate(0.9) contrast(1.08) brightness(0.72)",
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.97)] via-[rgba(3,6,14,0.38)] to-[rgba(3,6,14,0.1)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.97)] via-[rgba(7,24,39,0.38)] to-[rgba(7,24,39,0.1)]" />
                   {featured && (
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_32%_20%,rgba(77,255,160,0.2),transparent_32%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_32%_20%,rgba(84,224,166,0.2),transparent_32%)]" />
                   )}
                   <div className="relative z-10 mt-auto p-7 sm:p-8">
                     <div className="mb-5 flex items-center gap-3">
                       <span
-                        className={`rounded-full border bg-[rgba(3,6,14,0.42)] p-3 backdrop-blur-md ${
+                        className={`rounded-full border bg-[rgba(7,24,39,0.42)] p-3 backdrop-blur-md ${
                           featured
-                            ? "border-[rgba(77,255,160,0.34)] text-[var(--aurora)]"
-                            : "border-[rgba(168,216,234,0.22)] text-[var(--ice)]"
+                            ? "border-[rgba(84,224,166,0.34)] text-[var(--aurora)]"
+                            : "border-[rgba(201,214,223,0.22)] text-[var(--ice)]"
                         }`}
                       >
                         <Icon size={20} />
@@ -412,7 +412,7 @@ export default function HomePage() {
                     >
                       {act.name}
                     </h3>
-                    <p className="mb-5 max-w-lg text-sm leading-7 text-[rgba(240,237,232,0.68)]">
+                    <p className="mb-5 max-w-lg text-sm leading-7 text-[rgba(248,250,252,0.68)]">
                       {act.short}
                     </p>
                     <span
@@ -446,22 +446,22 @@ export default function HomePage() {
               Every season has its magic
             </h2>
           </div>
-          <div className="overflow-hidden rounded-[2.25rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl">
+          <div className="overflow-hidden rounded-[2.25rem] border border-[rgba(248,250,252,0.1)] bg-[#071827] shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-4">
               {seasons.map((season, index) => (
                 <div
                   key={season.title}
-                  className="relative min-h-[420px] border-b border-[rgba(240,237,232,0.1)] bg-cover bg-center p-7 lg:border-b-0 lg:border-r last:lg:border-r-0 lg:border-[rgba(240,237,232,0.1)]"
+                  className="relative min-h-[420px] border-b border-[rgba(248,250,252,0.1)] bg-cover bg-center p-7 lg:border-b-0 lg:border-r last:lg:border-r-0 lg:border-[rgba(248,250,252,0.1)]"
                   style={{ backgroundImage: seasonMoods[index] }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.8)] via-transparent to-[rgba(3,6,14,0.18)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.8)] via-transparent to-[rgba(7,24,39,0.18)]" />
                   <div className="relative z-10 flex h-full flex-col justify-between">
                     <p className="eyebrow">{season.title}</p>
                     <div>
                       <h3 className="font-display mb-4 text-4xl font-medium italic leading-none text-[var(--frost)]">
                         {season.label}
                       </h3>
-                      <p className="mb-6 text-sm leading-7 text-[rgba(240,237,232,0.7)]">
+                      <p className="mb-6 text-sm leading-7 text-[rgba(248,250,252,0.7)]">
                         {season.desc}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -480,7 +480,7 @@ export default function HomePage() {
           <div className="mt-8">
             <Link
               href="/when-to-go"
-              className="inline-flex items-center gap-2 rounded-full border border-[rgba(168,216,234,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(168,216,234,0.55)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[rgba(201,214,223,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(201,214,223,0.55)]"
             >
               Full seasonal guide →
             </Link>
@@ -508,7 +508,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/blog"
-              className="hidden items-center gap-2 rounded-full border border-[rgba(168,216,234,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(168,216,234,0.55)] sm:flex"
+              className="hidden items-center gap-2 rounded-full border border-[rgba(201,214,223,0.22)] px-5 py-3 text-sm text-[var(--ice)] transition hover:border-[rgba(201,214,223,0.55)] sm:flex"
             >
               All articles <ArrowRight size={14} />
             </Link>
@@ -518,28 +518,28 @@ export default function HomePage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(240,237,232,0.92)] p-7 text-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
+                className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(248,250,252,0.1)] bg-[rgba(248,250,252,0.92)] p-7 text-[#071827] shadow-2xl transition duration-500 hover:-translate-y-2"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[rgba(77,255,160,0.75)] via-[rgba(168,216,234,0.55)] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[rgba(84,224,166,0.75)] via-[rgba(201,214,223,0.55)] to-transparent" />
                 <div className="flex h-full flex-col">
                   <div className="mb-10 flex items-center justify-between gap-3">
-                    <span className="rounded-full border border-[rgba(7,16,31,0.14)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#07101f]">
+                    <span className="rounded-full border border-[rgba(11,31,53,0.14)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#071827]">
                       {post.category}
                     </span>
-                    <span className="text-xs uppercase tracking-[0.18em] text-[rgba(7,16,31,0.48)]">
+                    <span className="text-xs uppercase tracking-[0.18em] text-[rgba(11,31,53,0.48)]">
                       {post.date}
                     </span>
                   </div>
-                  <p className="mb-4 text-xs uppercase tracking-[0.22em] text-[rgba(7,16,31,0.46)]">
+                  <p className="mb-4 text-xs uppercase tracking-[0.22em] text-[rgba(11,31,53,0.46)]">
                     {blogAccents[index]}
                   </p>
-                  <h3 className="font-display mb-5 text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-[#07101f]">
+                  <h3 className="font-display mb-5 text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-[#071827]">
                     {post.title}
                   </h3>
-                  <p className="mb-8 text-sm leading-7 text-[rgba(7,16,31,0.66)]">
+                  <p className="mb-8 text-sm leading-7 text-[rgba(11,31,53,0.66)]">
                     {post.excerpt}
                   </p>
-                  <span className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#07101f]">
+                  <span className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#071827]">
                     Read more <ArrowRight size={14} />
                   </span>
                 </div>
@@ -563,12 +563,12 @@ export default function HomePage() {
         className="px-6 py-24 sm:py-32 section-divider"
         style={{
           background:
-            "radial-gradient(circle at 50% 0%, rgba(77,255,160,0.12), transparent 30%), linear-gradient(180deg, #050914, var(--midnight))",
+            "radial-gradient(circle at 50% 0%, rgba(84,224,166,0.12), transparent 30%), linear-gradient(180deg, #071827, var(--midnight))",
         }}
       >
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(7,16,31,0.72)] p-8 text-center shadow-2xl backdrop-blur-xl sm:p-14 lg:p-20">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-[rgba(248,250,252,0.1)] bg-[rgba(11,31,53,0.72)] p-8 text-center shadow-2xl backdrop-blur-xl sm:p-14 lg:p-20">
           <div className="mb-6 flex justify-center">
-            <span className="rounded-full border border-[rgba(77,255,160,0.28)] bg-[rgba(77,255,160,0.08)] p-4 text-[var(--aurora)] shadow-[0_0_32px_rgba(77,255,160,0.14)]">
+            <span className="rounded-full border border-[rgba(84,224,166,0.28)] bg-[rgba(84,224,166,0.08)] p-4 text-[var(--aurora)] shadow-[0_0_32px_rgba(84,224,166,0.14)]">
               <CalendarDays size={30} />
             </span>
           </div>
@@ -582,7 +582,7 @@ export default function HomePage() {
           >
             Get the free Lapland trip planner
           </h2>
-          <p className="mx-auto mb-10 max-w-xl text-sm leading-7 text-[rgba(240,237,232,0.62)]">
+          <p className="mx-auto mb-10 max-w-xl text-sm leading-7 text-[rgba(248,250,252,0.62)]">
             Best operators, budgets and packing list — straight to your inbox.
           </p>
           <div className="mx-auto max-w-2xl">

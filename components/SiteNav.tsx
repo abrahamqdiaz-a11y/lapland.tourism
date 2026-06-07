@@ -19,9 +19,9 @@ export default function SiteNav() {
     <nav
       className="sticky top-0 z-50 flex items-center justify-between px-6 py-4"
       style={{
-        background: "rgba(10,15,30,0.85)",
+        background: "rgba(7,24,39,0.85)",
         backdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(168,216,234,0.08)",
+        borderBottom: "1px solid rgba(201,214,223,0.08)",
       }}
     >
       <Link
@@ -70,7 +70,7 @@ export default function SiteNav() {
       {open && (
         <div
           className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-          style={{ background: "rgba(10,15,30,0.97)" }}
+          style={{ background: "rgba(7,24,39,0.97)" }}
         >
           <button
             className="absolute top-5 right-6"

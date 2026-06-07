@@ -45,7 +45,7 @@ export default function SiteFooter() {
         <div
           className="mt-8 pt-6 text-sm"
           style={{
-            borderTop: "1px solid rgba(168,216,234,0.08)",
+            borderTop: "1px solid rgba(201,214,223,0.08)",
             color: "var(--muted)",
           }}
         >

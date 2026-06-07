@@ -32,14 +32,14 @@ export default async function DestinationPage({ params }: Props) {
       <section
         className="relative flex min-h-[78vh] items-end overflow-hidden px-6 py-24 sm:py-32"
         style={{
-          backgroundImage: `linear-gradient(90deg, rgba(3,6,14,0.95) 0%, rgba(5,10,22,0.78) 46%, rgba(5,10,22,0.28) 100%), linear-gradient(180deg, rgba(3,6,14,0.1) 0%, rgba(3,6,14,0.8) 78%, var(--midnight) 100%), url('${destinationPhotography[slug]}')`,
+          backgroundImage: `linear-gradient(90deg, rgba(7,24,39,0.95) 0%, rgba(11,31,53,0.78) 46%, rgba(11,31,53,0.28) 100%), linear-gradient(180deg, rgba(7,24,39,0.1) 0%, rgba(7,24,39,0.8) 78%, var(--midnight) 100%), url('${destinationPhotography[slug]}')`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(77,255,160,0.14),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(84,224,166,0.14),transparent_32%)]" />
         <div className="relative z-10 mx-auto w-full max-w-7xl">
-          <nav className="mb-8 text-xs uppercase tracking-[0.18em] text-[rgba(240,237,232,0.48)]">
+          <nav className="mb-8 text-xs uppercase tracking-[0.18em] text-[rgba(248,250,252,0.48)]">
             <Link href="/" className="hover:text-[var(--ice)]">Home</Link>
             {" / "}
             <Link href="/destinations" className="hover:text-[var(--ice)]">Destinations</Link>
@@ -53,7 +53,7 @@ export default async function DestinationPage({ params }: Props) {
           >
             {dest.name}
           </h1>
-          <p className="mt-7 max-w-2xl text-2xl leading-9 text-[rgba(240,237,232,0.76)]">
+          <p className="mt-7 max-w-2xl text-2xl leading-9 text-[rgba(248,250,252,0.76)]">
             {dest.tagline}
           </p>
         </div>
@@ -79,7 +79,7 @@ export default async function DestinationPage({ params }: Props) {
           </div>
 
           <aside>
-            <div className="sticky top-24 rounded-[2rem] border border-[rgba(240,237,232,0.12)] bg-[rgba(7,16,31,0.72)] p-7 shadow-2xl backdrop-blur-xl">
+            <div className="sticky top-24 rounded-[2rem] border border-[rgba(248,250,252,0.12)] bg-[rgba(11,31,53,0.72)] p-7 shadow-2xl backdrop-blur-xl">
               <p className="eyebrow mb-5">Quick facts</p>
               <dl className="space-y-5">
                 <div>
@@ -113,19 +113,19 @@ export default async function DestinationPage({ params }: Props) {
                 <Link
                   key={act.slug}
                   href={`/destinations/${slug}/${act.slug}`}
-                  className="group relative flex min-h-[380px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
+                  className="group relative flex min-h-[380px] overflow-hidden rounded-[2rem] border border-[rgba(248,250,252,0.1)] bg-[#071827] shadow-2xl transition duration-500 hover:-translate-y-2"
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url('${activityPhotography[act.slug]}')`, filter: "brightness(0.74) contrast(1.08)" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.97)] via-[rgba(3,6,14,0.38)] to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,24,39,0.97)] via-[rgba(7,24,39,0.38)] to-transparent" />
                   <div className="relative z-10 mt-auto p-7">
                     <Icon size={22} className="mb-5 text-[var(--ice)]" />
                     <h3 className="font-display mb-3 text-4xl font-medium italic leading-none text-[var(--frost)]">
                       {act.name}
                     </h3>
-                    <p className="mb-5 text-sm leading-7 text-[rgba(240,237,232,0.68)]">{act.short}</p>
+                    <p className="mb-5 text-sm leading-7 text-[rgba(248,250,252,0.68)]">{act.short}</p>
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ice)]">
                       Book this activity →
                     </span>
@@ -138,7 +138,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       <section className="px-6 pb-24 sm:pb-32">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(7,16,31,0.72)] p-8 shadow-2xl backdrop-blur-xl sm:p-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[rgba(248,250,252,0.1)] bg-[rgba(11,31,53,0.72)] p-8 shadow-2xl backdrop-blur-xl sm:p-10">
           <h2 className="font-display mb-4 text-4xl font-medium italic text-[var(--frost)]">
             Getting there
           </h2>
