@@ -48,7 +48,7 @@ export default function HomePage() {
         className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 py-28"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(7,24,39,0.62) 0%, rgba(7,24,39,0.28) 45%, rgba(7,24,39,0.0) 70%), linear-gradient(180deg, rgba(7,24,39,0.0) 0%, rgba(7,24,39,0.88) 88%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
+            "linear-gradient(180deg, rgba(7,24,39,0.0) 0%, rgba(7,24,39,0.82) 90%, var(--midnight) 100%), url('/dylan-shaw-94uGO6XrHcc-unsplash.jpg')",
           backgroundPosition: "center 40%",
           backgroundSize: "cover",
         }}
