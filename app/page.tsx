@@ -197,7 +197,7 @@ export default function HomePage() {
       </section>
 
       {/* Activities */}
-      <section className="relative px-6 py-24 sm:py-32 section-divider">
+      <section className="relative bg-white px-6 py-24 sm:py-32 section-divider">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-3xl">
             <p className="eyebrow mb-4">Activities</p>
@@ -280,7 +280,7 @@ export default function HomePage() {
       </section>
 
       {/* Seasons */}
-      <section className="bg-[#f0f5f8] px-6 py-24 sm:py-32 section-divider">
+      <section className="bg-[#f4f8fb] px-6 py-24 sm:py-32 section-divider">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex max-w-4xl flex-col gap-4">
             <p className="eyebrow">When to go</p>
@@ -305,7 +305,7 @@ export default function HomePage() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,6,14,0.8)] via-transparent to-[rgba(3,6,14,0.18)]" />
                   <div className="relative z-10 flex h-full flex-col justify-between">
-                    <p className="eyebrow">{season.title}</p>
+                    <p className="eyebrow eyebrow-light">{season.title}</p>
                     <div>
                       <h3 className="font-display mb-4 text-4xl font-medium italic leading-none text-[var(--frost)]">
                         {season.label}
@@ -338,7 +338,7 @@ export default function HomePage() {
       </section>
 
       {/* Blog */}
-      <section className="px-6 py-24 sm:py-32 section-divider">
+      <section className="bg-white px-6 py-24 sm:py-32 section-divider">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex items-end justify-between gap-8">
             <div>
@@ -367,7 +367,7 @@ export default function HomePage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(240,237,232,0.1)] bg-[rgba(240,237,232,0.92)] p-7 text-[#07101f] shadow-2xl transition duration-500 hover:-translate-y-2"
+                className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-[rgba(11,37,64,0.1)] bg-white p-7 text-[#07101f] shadow-[0_4px_24px_rgba(11,37,64,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(11,37,64,0.14)] hover:border-[rgba(11,37,64,0.2)]"
               >
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[rgba(77,255,160,0.75)] via-[rgba(168,216,234,0.55)] to-transparent" />
                 <div className="flex h-full flex-col">

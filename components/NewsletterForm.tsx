@@ -50,7 +50,7 @@ export default function NewsletterForm() {
           type="checkbox"
           checked={consented}
           onChange={(e) => setConsented(e.target.checked)}
-          className="mt-1 flex-shrink-0 accent-[#4DFFA0]"
+          className="mt-1 flex-shrink-0 accent-[#54E0A6]"
         />
         <span className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
           I agree to receive email updates from Lapland Guide. You can unsubscribe at any time.

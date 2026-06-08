@@ -83,6 +83,10 @@ body {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
+  color: #4a6478;
+}
+
+.eyebrow-light {
   color: var(--ice);
 }
 
@@ -117,7 +121,7 @@ body {
 }
 
 .section-divider {
-  border-top: 1px solid rgba(11,37,64,0.08);
+  border-top: 1px solid rgba(11,37,64,0.06);
 }
 
 .prose-lapland {

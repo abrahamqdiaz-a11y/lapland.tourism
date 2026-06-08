@@ -88,8 +88,8 @@ export default function PlanForm() {
                 key={act.slug}
                 className="flex items-center gap-2 cursor-pointer p-3 rounded-xl text-sm transition-colors"
                 style={{
-                  background: checked ? "rgba(77,255,160,0.08)" : "rgba(13,27,42,0.6)",
-                  border: checked ? "1px solid rgba(77,255,160,0.3)" : "1px solid rgba(168,216,234,0.1)",
+                  background: checked ? "rgba(84,224,166,0.08)" : "rgba(11,31,53,0.6)",
+                  border: checked ? "1px solid rgba(84,224,166,0.3)" : "1px solid rgba(201,214,223,0.1)",
                   color: checked ? "var(--aurora)" : "var(--muted)",
                 }}
               >
@@ -97,7 +97,7 @@ export default function PlanForm() {
                   type="checkbox"
                   checked={checked}
                   onChange={() => toggleActivity(act.slug)}
-                  className="accent-[#4DFFA0]"
+                  className="accent-[#54E0A6]"
                 />
                 {act.name}
               </label>
@@ -111,7 +111,7 @@ export default function PlanForm() {
           type="checkbox"
           checked={consented}
           onChange={(e) => setConsented(e.target.checked)}
-          className="mt-1 flex-shrink-0 accent-[#4DFFA0]"
+          className="mt-1 flex-shrink-0 accent-[#54E0A6]"
         />
         <span className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
           I agree to receive the Lapland Guide trip planner and occasional travel updates.
