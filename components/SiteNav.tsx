@@ -6,9 +6,9 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "/destinations", label: "Destinations" },
-  { href: "/activities", label: "Activities" },
+  { href: "/activities", label: "Experiences" },
   { href: "/when-to-go", label: "When to go" },
-  { href: "/blog", label: "Guide" },
+  { href: "/blog", label: "The Guide" },
   { href: "/about", label: "About" },
 ];
 
@@ -19,47 +19,49 @@ export default function SiteNav() {
     <nav
       className="sticky top-0 z-50 flex items-center justify-between px-6 py-4"
       style={{
-        background: "rgba(7,24,39,0.85)",
-        backdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(201,214,223,0.08)",
+        background: "rgba(6,15,26,0.88)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(201,214,223,0.07)",
+        WebkitBackdropFilter: "blur(20px)",
       }}
     >
+      {/* Logo */}
       <Link
         href="/"
-        className="flex items-center gap-2 font-display text-xl font-semibold"
+        className="flex items-center gap-2.5 font-display text-xl font-semibold transition-opacity hover:opacity-80"
         style={{ color: "var(--frost)" }}
       >
-        <Snowflake size={20} style={{ color: "var(--ice)" }} />
+        <Snowflake size={18} style={{ color: "var(--aurora)" }} />
         Lapland Guide
       </Link>
 
-      <div className="hidden md:flex items-center gap-6">
+      {/* Desktop nav links */}
+      <div className="hidden md:flex items-center gap-7">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm transition-colors"
+            className="text-sm transition-all duration-200 hover:text-[var(--frost)]"
             style={{ color: "var(--muted)", fontFamily: "var(--font-inter)" }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--frost)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--muted)")
-            }
           >
             {link.label}
           </Link>
         ))}
       </div>
 
+      {/* CTA */}
       <div className="hidden md:flex">
-        <Link href="/plan-your-trip" className="btn-primary text-sm py-2 px-5">
-          Get free guide
+        <Link
+          href="/plan-your-trip"
+          className="inline-flex items-center gap-2 rounded-full border border-[rgba(84,224,166,0.38)] bg-[rgba(84,224,166,0.1)] px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-[var(--aurora)] transition duration-200 hover:bg-[rgba(84,224,166,0.18)] hover:border-[rgba(84,224,166,0.56)]"
+        >
+          Plan your trip
         </Link>
       </div>
 
+      {/* Mobile hamburger */}
       <button
-        className="md:hidden"
+        className="md:hidden transition-colors"
         style={{ color: "var(--frost)" }}
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
@@ -67,23 +69,31 @@ export default function SiteNav() {
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
+      {/* Mobile fullscreen menu */}
       {open && (
         <div
           className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-          style={{ background: "rgba(7,24,39,0.97)" }}
+          style={{ background: "rgba(6,15,26,0.97)", backdropFilter: "blur(20px)" }}
         >
           <button
-            className="absolute top-5 right-6"
+            className="absolute top-5 right-6 transition-colors hover:text-[var(--aurora)]"
             style={{ color: "var(--frost)" }}
             onClick={() => setOpen(false)}
           >
             <X size={28} />
           </button>
+
+          {/* Logo in mobile menu */}
+          <div className="absolute top-5 left-6 flex items-center gap-2 font-display text-xl font-semibold" style={{ color: "var(--frost)" }}>
+            <Snowflake size={18} style={{ color: "var(--aurora)" }} />
+            Lapland Guide
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-display text-3xl italic"
+              className="font-display text-4xl italic transition-colors hover:text-[var(--aurora)]"
               style={{ color: "var(--frost)" }}
               onClick={() => setOpen(false)}
             >
@@ -92,10 +102,10 @@ export default function SiteNav() {
           ))}
           <Link
             href="/plan-your-trip"
-            className="btn-primary mt-4"
+            className="btn-primary mt-4 text-base"
             onClick={() => setOpen(false)}
           >
-            Get free guide
+            Plan your trip
           </Link>
         </div>
       )}
