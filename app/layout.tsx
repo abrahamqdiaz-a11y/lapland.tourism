@@ -38,11 +38,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${cormorant.variable} ${inter.variable}`}
-      style={{ backgroundColor: "var(--midnight)" }}
+      style={{ backgroundColor: "#f4f8fb" }}
     >
       <body
         className="min-h-screen flex flex-col"
-        style={{ backgroundColor: "var(--midnight)" }}
+        style={{ backgroundColor: "#f4f8fb" }}
       >
         <SiteNav />
         <main className="flex-1">{children}</main>
