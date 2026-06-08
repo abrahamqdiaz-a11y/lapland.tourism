@@ -6,9 +6,9 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "/destinations", label: "Destinations" },
-  { href: "/activities", label: "Experiences" },
+  { href: "/activities", label: "Activities" },
   { href: "/when-to-go", label: "When to go" },
-  { href: "/blog", label: "The Guide" },
+  { href: "/blog", label: "Guide" },
   { href: "/about", label: "About" },
 ];
 
@@ -19,82 +19,75 @@ export default function SiteNav() {
     <nav
       className="sticky top-0 z-50 flex items-center justify-between px-6 py-4"
       style={{
-        background: "rgba(6,15,26,0.88)",
-        backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(201,214,223,0.07)",
-        WebkitBackdropFilter: "blur(20px)",
+        background: "rgba(255,255,255,0.92)",
+        backdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(11,37,64,0.08)",
       }}
     >
-      {/* Logo */}
       <Link
         href="/"
-        className="flex items-center gap-2.5 font-display text-xl font-semibold transition-opacity hover:opacity-80"
-        style={{ color: "var(--frost)" }}
+        className="flex items-center gap-2 font-display text-xl font-semibold"
+        style={{ color: "#0b2540" }}
       >
-        <Snowflake size={18} style={{ color: "var(--aurora)" }} />
+        <Snowflake size={20} style={{ color: "#0b2540" }} />
         Lapland Guide
       </Link>
 
-      {/* Desktop nav links */}
-      <div className="hidden md:flex items-center gap-7">
+      <div className="hidden md:flex items-center gap-6">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm transition-all duration-200 hover:text-[var(--frost)]"
-            style={{ color: "var(--muted)", fontFamily: "var(--font-inter)" }}
+            className="text-sm transition-colors"
+            style={{ color: "#4a6478", fontFamily: "var(--font-inter)" }}
+            onMouseEnter={(e) =>
+              ((e.target as HTMLElement).style.color = "#0b2540")
+            }
+            onMouseLeave={(e) =>
+              ((e.target as HTMLElement).style.color = "#4a6478")
+            }
           >
             {link.label}
           </Link>
         ))}
       </div>
 
-      {/* CTA */}
       <div className="hidden md:flex">
         <Link
           href="/plan-your-trip"
-          className="inline-flex items-center gap-2 rounded-full border border-[rgba(84,224,166,0.38)] bg-[rgba(84,224,166,0.1)] px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-[var(--aurora)] transition duration-200 hover:bg-[rgba(84,224,166,0.18)] hover:border-[rgba(84,224,166,0.56)]"
+          className="inline-flex items-center rounded-full border border-[rgba(77,255,160,0.72)] bg-white px-5 py-2 text-sm font-semibold text-[#0b2540] shadow-[0_0_18px_rgba(77,255,160,0.16)] transition hover:-translate-y-0.5 hover:shadow-[0_0_26px_rgba(77,255,160,0.26)]"
         >
-          Plan your trip
+          Get free guide
         </Link>
       </div>
 
-      {/* Mobile hamburger */}
       <button
-        className="md:hidden transition-colors"
-        style={{ color: "var(--frost)" }}
+        className="md:hidden"
+        style={{ color: "#0b2540" }}
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile fullscreen menu */}
       {open && (
         <div
           className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-          style={{ background: "rgba(6,15,26,0.97)", backdropFilter: "blur(20px)" }}
+          style={{ background: "rgba(255,255,255,0.98)" }}
         >
           <button
-            className="absolute top-5 right-6 transition-colors hover:text-[var(--aurora)]"
-            style={{ color: "var(--frost)" }}
+            className="absolute top-5 right-6"
+            style={{ color: "#0b2540" }}
             onClick={() => setOpen(false)}
           >
             <X size={28} />
           </button>
-
-          {/* Logo in mobile menu */}
-          <div className="absolute top-5 left-6 flex items-center gap-2 font-display text-xl font-semibold" style={{ color: "var(--frost)" }}>
-            <Snowflake size={18} style={{ color: "var(--aurora)" }} />
-            Lapland Guide
-          </div>
-
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-display text-4xl italic transition-colors hover:text-[var(--aurora)]"
-              style={{ color: "var(--frost)" }}
+              className="font-display text-3xl italic"
+              style={{ color: "#0b2540" }}
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -102,10 +95,10 @@ export default function SiteNav() {
           ))}
           <Link
             href="/plan-your-trip"
-            className="btn-primary mt-4 text-base"
+            className="mt-4 inline-flex items-center rounded-full border border-[rgba(77,255,160,0.72)] bg-white px-7 py-4 font-semibold text-[#0b2540] shadow-[0_0_18px_rgba(77,255,160,0.16)] transition hover:-translate-y-0.5 hover:shadow-[0_0_26px_rgba(77,255,160,0.26)]"
             onClick={() => setOpen(false)}
           >
-            Plan your trip
+            Get free guide
           </Link>
         </div>
       )}
