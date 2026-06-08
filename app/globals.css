@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --midnight: #0A0F1E;
+  --midnight: #071827;
   --deep-navy: #0D1B2A;
   --aurora: #4DFFA0;
   --aurora-dim: rgba(77,255,160,0.15);
   --ice: #A8D8EA;
   --ice-dim: rgba(168,216,234,0.12);
   --frost: #F0EDE8;
+  --snow-text: #0b1f35;
   --muted: #6B7FA3;
-  --border: rgba(168,216,234,0.12);
+  --border: rgba(11,37,64,0.08);
   --card-bg: rgba(13,27,42,0.8);
 }
 
 body {
-  background-color: var(--midnight);
-  color: var(--frost);
+  background-color: #f4f8fb;
+  color: var(--snow-text);
   font-family: 'Inter', sans-serif;
 }
 
@@ -116,7 +117,7 @@ body {
 }
 
 .section-divider {
-  border-top: 1px solid rgba(168,216,234,0.08);
+  border-top: 1px solid rgba(11,37,64,0.08);
 }
 
 .prose-lapland {
@@ -144,7 +145,7 @@ body {
 }
 
 .hero-bg {
-  background: linear-gradient(135deg, #0A0F1E 0%, #0D1B2A 60%, #0F2235 100%);
+  background: linear-gradient(135deg, #f4f8fb 0%, #ffffff 60%, #eef6fa 100%);
 }
 
 input[type="email"],

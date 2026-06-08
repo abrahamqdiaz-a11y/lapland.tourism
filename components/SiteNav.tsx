@@ -19,17 +19,17 @@ export default function SiteNav() {
     <nav
       className="sticky top-0 z-50 flex items-center justify-between px-6 py-4"
       style={{
-        background: "rgba(10,15,30,0.85)",
+        background: "rgba(255,255,255,0.92)",
         backdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(168,216,234,0.08)",
+        borderBottom: "1px solid rgba(11,37,64,0.08)",
       }}
     >
       <Link
         href="/"
         className="flex items-center gap-2 font-display text-xl font-semibold"
-        style={{ color: "var(--frost)" }}
+        style={{ color: "#0b2540" }}
       >
-        <Snowflake size={20} style={{ color: "var(--ice)" }} />
+        <Snowflake size={20} style={{ color: "#0b2540" }} />
         Lapland Guide
       </Link>
 
@@ -39,12 +39,12 @@ export default function SiteNav() {
             key={link.href}
             href={link.href}
             className="text-sm transition-colors"
-            style={{ color: "var(--muted)", fontFamily: "var(--font-inter)" }}
+            style={{ color: "#4a6478", fontFamily: "var(--font-inter)" }}
             onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--frost)")
+              ((e.target as HTMLElement).style.color = "#0b2540")
             }
             onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--muted)")
+              ((e.target as HTMLElement).style.color = "#4a6478")
             }
           >
             {link.label}
@@ -53,14 +53,17 @@ export default function SiteNav() {
       </div>
 
       <div className="hidden md:flex">
-        <Link href="/plan-your-trip" className="btn-primary text-sm py-2 px-5">
+        <Link
+          href="/plan-your-trip"
+          className="inline-flex items-center rounded-full border border-[rgba(77,255,160,0.72)] bg-white px-5 py-2 text-sm font-semibold text-[#0b2540] shadow-[0_0_18px_rgba(77,255,160,0.16)] transition hover:-translate-y-0.5 hover:shadow-[0_0_26px_rgba(77,255,160,0.26)]"
+        >
           Get free guide
         </Link>
       </div>
 
       <button
         className="md:hidden"
-        style={{ color: "var(--frost)" }}
+        style={{ color: "#0b2540" }}
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
       >
@@ -70,11 +73,11 @@ export default function SiteNav() {
       {open && (
         <div
           className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-          style={{ background: "rgba(10,15,30,0.97)" }}
+          style={{ background: "rgba(255,255,255,0.98)" }}
         >
           <button
             className="absolute top-5 right-6"
-            style={{ color: "var(--frost)" }}
+            style={{ color: "#0b2540" }}
             onClick={() => setOpen(false)}
           >
             <X size={28} />
@@ -84,7 +87,7 @@ export default function SiteNav() {
               key={link.href}
               href={link.href}
               className="font-display text-3xl italic"
-              style={{ color: "var(--frost)" }}
+              style={{ color: "#0b2540" }}
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -92,7 +95,7 @@ export default function SiteNav() {
           ))}
           <Link
             href="/plan-your-trip"
-            className="btn-primary mt-4"
+            className="mt-4 inline-flex items-center rounded-full border border-[rgba(77,255,160,0.72)] bg-white px-7 py-4 font-semibold text-[#0b2540] shadow-[0_0_18px_rgba(77,255,160,0.16)] transition hover:-translate-y-0.5 hover:shadow-[0_0_26px_rgba(77,255,160,0.26)]"
             onClick={() => setOpen(false)}
           >
             Get free guide
